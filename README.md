@@ -3,7 +3,6 @@
 https://www.youtube.com/watch?v=Kw4_i4l5y4s  
 https://github.com/philipplackner/InstagramUI
 
-</br>
 
 ## 1. 초기 실행 화면
 <img src="https://user-images.githubusercontent.com/68090939/134819580-881c2037-36ff-431c-816f-6bc791e234d7.png" width="350"/>
