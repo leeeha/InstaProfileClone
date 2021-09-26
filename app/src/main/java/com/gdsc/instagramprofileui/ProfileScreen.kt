@@ -40,7 +40,7 @@ fun ProfileScreen() {
     var selectedTabIndex by remember {
         mutableStateOf(0)
     }
-    
+
     Column(modifier = Modifier.fillMaxSize()) {
         TopBar(
             name = "leeeha",
@@ -74,7 +74,7 @@ fun ProfileScreen() {
                 .fillMaxWidth()
                 .padding(horizontal = 20.dp)
         )
-        
+
         Spacer(modifier = Modifier.height(10.dp))
         PostTabView(
             imageWithTexts = listOf(
@@ -95,10 +95,10 @@ fun ProfileScreen() {
                     text = "Profile"
                 ),
             )
-        ){
+        ) {
             selectedTabIndex = it
         }
-        when(selectedTabIndex) {
+        when (selectedTabIndex) {
             0 -> PostSection(
                 posts = listOf(
                     painterResource(id = R.drawable.peanuts1),
@@ -177,8 +177,8 @@ fun ProfileSection(
         ProfileDescription(
             displayName = "Computer engineering undergraduate student",
             description = "Seoul National University of Science and Technology\n" +
-                            "22 years old\n" +
-                            "I'm interested in developing Android apps!",
+                    "22 years old\n" +
+                    "I'm interested in developing Android apps!",
             url = "https://github.com/leeeha",
             followedBy = listOf("seoultech_com", "gdsc_seoultech"),
             otherCount = 17
@@ -212,7 +212,7 @@ fun StatSection(modifier: Modifier = Modifier) {
         verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.SpaceAround,
         modifier = modifier
-    ){
+    ) {
         // Posts, Followers, Following
         ProfileStat(numberText = "601", text = "Posts")
         ProfileStat(numberText = "100K", text = "Followers")
@@ -230,7 +230,7 @@ fun ProfileStat(
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = modifier
-    ){
+    ) {
         Text(
             text = numberText,
             fontWeight = FontWeight.Bold,
@@ -255,7 +255,7 @@ fun ProfileDescription(
         modifier = Modifier
             .fillMaxWidth()
             .padding(horizontal = 20.dp)
-    ){
+    ) {
         Text(
             text = displayName,
             fontWeight = FontWeight.Bold,
@@ -275,7 +275,7 @@ fun ProfileDescription(
         )
         // 볼드체 스타일을 push, pop 하면서
         // 문자열에 부분적으로 볼드체 적용하기!
-        if(followedBy.isNotEmpty()){
+        if (followedBy.isNotEmpty()) {
             Text(
                 text = buildAnnotatedString {
                     val boldStyle = SpanStyle(
@@ -288,11 +288,11 @@ fun ProfileDescription(
                         pushStyle(boldStyle)
                         append(name)
                         pop()
-                        if(index < followedBy.size - 1){
+                        if (index < followedBy.size - 1) {
                             append(", ")
                         }
                     }
-                    if(otherCount > 2){
+                    if (otherCount > 2) {
                         append(" and ")
                         pushStyle(boldStyle)
                         append("$otherCount others")
@@ -314,7 +314,7 @@ fun ButtonSection(
     Row(
         horizontalArrangement = Arrangement.SpaceEvenly,
         modifier = modifier
-    ){
+    ) {
         ActionButton(
             text = "Following",
             icon = Icons.Default.KeyboardArrowDown,
@@ -358,15 +358,15 @@ fun ActionButton(
                 shape = RoundedCornerShape(5.dp)
             )
             .padding(6.dp)
-    ){
-        if(text != null){
+    ) {
+        if (text != null) {
             Text(
                 text = text,
                 fontWeight = FontWeight.SemiBold,
                 fontSize = 14.sp
             )
         }
-        if(icon != null){
+        if (icon != null) {
             Icon(
                 imageVector = icon,
                 contentDescription = null,
@@ -381,14 +381,14 @@ fun HighlightSection(
     modifier: Modifier = Modifier,
     highlights: List<ImageWithText>
 ) {
-    LazyRow(modifier = modifier){
-        items(highlights.size){
+    LazyRow(modifier = modifier) {
+        items(highlights.size) {
             Column(
                 horizontalAlignment = Alignment.CenterHorizontally,
                 verticalArrangement = Arrangement.Center,
                 modifier = Modifier
                     .padding(end = 15.dp)
-            ){
+            ) {
                 RoundImage(
                     image = highlights[it].image,
                     modifier = Modifier.size(70.dp)
@@ -421,7 +421,7 @@ fun PostTabView(
         backgroundColor = Color.Transparent,
         contentColor = Color.Black,
         modifier = modifier
-    ){
+    ) {
         imageWithTexts.forEachIndexed { index, item ->
             Tab(
                 selected = selectedTabIndex == index,
@@ -431,12 +431,12 @@ fun PostTabView(
                     selectedTabIndex = index
                     onTabSelected(index)
                 }
-            ){
+            ) {
                 Icon(
                     painter = item.image,
                     contentDescription = item.text,
                     // 탭을 클릭하면 검정색, 안 하면 회색
-                    tint = if(selectedTabIndex == index) Color.Black else inactiveColor,
+                    tint = if (selectedTabIndex == index) Color.Black else inactiveColor,
                     modifier = Modifier
                         .padding(10.dp)
                         .size(20.dp)
@@ -456,8 +456,8 @@ fun PostSection(
         cells = GridCells.Fixed(3),
         modifier = modifier
             .scale(1.01f)
-    ){
-        items(posts.size){
+    ) {
+        items(posts.size) {
             Image(
                 painter = posts[it],
                 contentDescription = null,
