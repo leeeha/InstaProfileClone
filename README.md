@@ -4,7 +4,7 @@ https://www.youtube.com/watch?v=Kw4_i4l5y4s
 https://github.com/philipplackner/InstagramUI
 
 
-## 1. 초기 실행 화면, 마우스 스크롤 해서 전체 포스트 확인하기
+## 1. 초기 실행 화면, 스크롤 해서 전체 포스트 확인하기
 <p float="left">
   <img src = "https://user-images.githubusercontent.com/68090939/134856268-4ed01e7d-a315-46f2-982f-b4834c3423f3.png" width="300"/>
   <img src = "https://user-images.githubusercontent.com/68090939/134856273-58be40cc-182c-47d0-a166-e1faf2f9ecaa.png" width="300"/>
