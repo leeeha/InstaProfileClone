@@ -21,15 +21,11 @@ class MainActivity : ComponentActivity() {
     }
 }
 
-@Composable
-fun Greeting(name: String) {
-    Text(text = "Hello $name!")
-}
-
+@ExperimentalFoundationApi
 @Preview(showBackground = true)
 @Composable
 fun DefaultPreview() {
     InstagramProfileUITheme {
-        Greeting("Android")
+        ProfileScreen()
     }
 }
